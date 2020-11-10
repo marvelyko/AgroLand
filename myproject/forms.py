@@ -50,4 +50,4 @@ class PlantsForms(FlaskForm):
                           choices=[('Any', 'Any'), ('Intolerant', 'Intolerant'), ('Intermediate', 'Intermediate'),
                                    ('Tolerant', 'Tolerant')])
     temperature_min = IntegerField('Temperature, Minimum (°F):', validators=[DataRequired()])
-    submit = SubmitField("Submit")
+    submit = SubmitField("Calculate")

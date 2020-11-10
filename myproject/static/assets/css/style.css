@@ -571,7 +571,7 @@ section {
   max-width: 100%;
   margin: 30px 20px;
   background-color: #F8F8F8;
-  height: 880px;
+  height: 950px;
   border-radius: 20px;
   box-shadow: 5px 10px 8px 10px #D8D8D8;
 }
@@ -597,7 +597,7 @@ section {
   margin: 30px 20px;
   width: 500px;
   background-color: #F8F8F8;
-  height: 880px;
+  height: 950px;
   border-radius: 20px;
   box-shadow: 5px 10px 8px 10px #D8D8D8;
   text-align: left;
@@ -643,7 +643,7 @@ section {
   background-color: #1EC500;
   color: #ffffff;
   width: 100%; 
-  margin-top: 45px;
+  margin-top: 157px;
   border: none;
   height: 35px;
 }

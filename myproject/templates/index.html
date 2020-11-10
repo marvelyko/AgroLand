@@ -10,21 +10,21 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../static/../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="../static/../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../static/../static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="../static/../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="../static/../static/assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="../static/../static/assets/vendor/owl.carousel/../static/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="../static/../static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="../myproject/static/../static/assets/vendor/owl.carousel/../static/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="../static/../static/assets/css/style.css" rel="stylesheet">
+  <link href="../static/assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Ninestars - v2.2.0
@@ -84,61 +84,73 @@
 
     <!-- ======= Froms ======= -->
 
-    <section id="about" class="form-container">
+<form method="POST" class="form-group" action="" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+
+
+
+        <section id="about" class="form-container">
       <div class="nrow">
 
         <div class="form-info-container">
-          <div>
-            <label for="plant">Coarse</label>
-            <input type="text" name="plant" class=""/>
+            <h1>Requirements{{ df_len }}</h1>
+          <div >
+
+                   {{ form.Coarse.label() }}
+                {{ form.Coarse(class="browser-default custom-select") }}
+
+
+
           </div>
           <div>
-            <label for="plant">Medium</label>
-            <input type="text" name="plant" class=""/>
+                    {{ form.Medium.label() }}
+                    {{ form.Medium(class="browser-default custom-select") }}
           </div>
           <div>
-            <label for="plant">Fine</label>
-            <input type="text" name="plant" class=""/>
+                    {{ form.Fine.label() }}
+                    {{ form.Fine(class="browser-default custom-select") }}
           </div>
           <div>
-            <label for="plant">Anaerobic</label>
-            <input type="text" name="plant" class=""/>
+                    {{ form.CaCO.label() }}
+                    {{ form.CaCO(class="browser-default custom-select") }}
           </div>
           <div>
-            <label for="plant">CaCO</label>
-            <input type="text" name="plant" class=""/>
+                    {{ form.Cold.label() }}
+                    {{ form.Cold(class="browser-default custom-select") }}
+          </div>
+            <div>
+                    {{ form.Moisture.label() }}
+                    {{ form.Moisture(class="browser-default custom-select") }}
           </div>
           <div>
-            <label for="plant">Cold</label>
-            <input type="text" name="plant" class=""/>
+                    {{ form.Precipitation_min.label() }}
+                    {{ form.Precipitation_min() }}
           </div>
           <div>
-            <label for="plant">Drought</label>
-            <input type="text" name="plant" class=""/>
+                    {{ form.Precipitation_max.label() }}
+                    {{ form.Precipitation_max() }}
           </div>
           <div>
-            <label for="plant">Fertility</label>
-            <input type="text" name="plant" class=""/>
+                    {{ form.temperature_min.label() }}
+                    {{ form.temperature_min() }}
           </div>
           <div>
-            <label for="plant">Fire</label>
-            <input type="text" name="plant" class=""/>
+                    {{ form.Frost_free.label() }}
+                    {{ form.Frost_free() }}
+          </div>
+
+          <div>
+                    {{ form.pH_Min.label() }}
+                    {{ form.pH_Min() }}
           </div>
           <div>
-            <label for="plant">Frost free</label>
-            <input type="text" name="plant" class=""/>
+                    {{ form.pH_Max.label() }}
+                    {{ form.pH_Max() }}
           </div>
+
           <div>
-            <label for="plant">Hedge</label>
-            <input type="text" name="plant" class=""/>
-          </div>
-          <div>
-            <label for="plant">Moisture</label>
-            <input type="text" name="plant" class=""/>
-          </div>
-          
-          <div>
-            <button id="Calculate" type="submit">Calculate</button>          
+              {{ form.submit(id="Calculate") }}
+
           </div>
         </div>
 
@@ -178,6 +190,12 @@
       </div>
 
     </section>
+
+
+
+
+</form>
+
 
     <!-- End Froms -->
 
