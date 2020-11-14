@@ -592,6 +592,7 @@ section {
   border-bottom: solid 1px #292929;
 }
 .form-stat-container{
+  overflow: auto;
   flex: 45%;
   max-width: 100%;
   margin: 30px 20px;
