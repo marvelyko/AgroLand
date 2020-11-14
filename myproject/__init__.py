@@ -19,8 +19,8 @@ mail = Mail(app)
 
 @app.route('/',methods=['GET', 'POST'] )
 def index():
-    names = ['plant','plant','plant','plant','plant','plant','plant','plant','plant']
-    scores = ['0','0','0','0','0','0','0','0','0']
+    names = ['plant','plant','plant','plant','plant','plant','plant','plant','plant','plant']
+    scores = ['0','0','0','0','0','0','0','0','0','0']
     res=True
     form=PlantsForms()
     if form.validate_on_submit():
