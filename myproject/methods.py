@@ -5,7 +5,9 @@
 from collections import Counter
 from myproject.forms import PlantsForms
 form=PlantsForms()
-def choise_point(col,plant,samp):
+
+
+def choise_point(col, plant, samp):
     choise = {'Any': 'Any', 'None': 0, 'Low': 1,
               'Medium': 2, 'High': 3}
     try:
@@ -20,17 +22,18 @@ def choise_point(col,plant,samp):
         return 0.1
 
 
-def yes_no(col,plant,samp):
+def yes_no(col, plant, samp):
     if plant[col] == samp[col] or samp[col] == 'Any':
         return 1
     return 0
 
 
-def precipitation(colmin, colmax,plant,samp):
-    col_min = samp[colmin]
-    col_max = samp[colmax]
-    plant_min = plant[colmin]
-    plant_max = plant[colmax]
+def precipitation(plant, samp):
+    col_min = samp['Precipitation (Minimum)']
+    print(samp)
+    col_max = samp['Precipitation (Maximum)']
+    plant_min = plant['Precipitation (Minimum)']
+    plant_max = plant['Precipitation (Maximum)']
 
     if col_min >= plant_min and col_max <= plant_max:
         return 1
@@ -42,16 +45,16 @@ def precipitation(colmin, colmax,plant,samp):
     return 2 / (k + 3)
 
 
-def mintemp(col,plant,samp):
-    col_t = samp[col] * (9 / 5) + 32
+def mintemp(plant, samp):
+    col_t = samp['Temperature, Minimum (°F)'] * (9 / 5) + 32
 
-    plant_t = plant[col]
+    plant_t = plant['Temperature, Minimum (°F)']
     if col_t >= plant_t:
         return 1
     return 5 / (-col_t + plant_t + 10)
 
 
-def minfrost(col,plant,samp):
+def minfrost(col, plant, samp):
     col_f = samp[col]
     plant_f = plant[col]
     if col_f >= plant_f:
@@ -59,58 +62,42 @@ def minfrost(col,plant,samp):
     return 15 / (-col_f + plant_f + 40)
 
 
-def countpoint(plant,samp):
+def countpoint(plant, samp):
     s = 0
-    plant=plant
-    samp=samp
+    plant = plant
     #########
-    s += yes_no('Adapted to Coarse Textured Soils',plant,samp)
+    s += yes_no('Adapted to Coarse Textured Soils', plant, samp)
 
     #########
-    s += yes_no('Adapted to Medium Textured Soils',plant,samp)
+    s += yes_no('Adapted to Medium Textured Soils', plant, samp)
 
     ###########
-    s += yes_no('Adapted to Fine Textured Soils',plant,samp)
+    s += yes_no('Adapted to Fine Textured Soils', plant, samp)
 
     ###################################
-    s += choise_point('Anaerobic Tolerance',plant,samp)
+    # s += choise_point('Anaerobic Tolerance', plant, samp)
 
     #################################
-    s += choise_point('CaCO<SUB>3</SUB> Tolerance',plant,samp)
+    s += choise_point('CaCO<SUB>3</SUB> Tolerance', plant, samp)
 
     ##################################
-    s += yes_no('Cold Stratification Required',plant,samp)
+    s += yes_no('Cold Stratification Required', plant, samp)
 
     ##################################
-    s += choise_point('Moisture Use',plant,samp)
+    s += choise_point('Moisture Use', plant, samp)
 
     ##################################
-    s += precipitation('Precipitation (Minimum)', 'Precipitation (Maximum)',plant,samp)
+    s += precipitation(plant, samp)
 
     ##############
-    s += mintemp('Temperature, Minimum (°F)')
+    s += mintemp(plant, samp)
 
     ############
-    s += minfrost('Frost Free Days, Minimum')
+    s += minfrost('Frost Free Days, Minimum', plant, samp)
 
-    s += precipitation('pH (Minimum)', 'pH (Maximum)')
+    # s += precipitation('pH (Minimum)', 'pH (Maximum)', plant, samp)
 
     return s
-
-def calculate(df,plant):
-    form=PlantsForms()
-    plant=plant
-    samp = creatSamp(form,df)
-
-    result = {}
-    for plant in df.iloc:
-        try:
-
-            result[plant[0]] = countpoint(plant,samp) / 11 * 100
-        except:
-            print(f"{plant[0]}")
-
-    return dict(Counter(result).most_common(10))
 
 def creatSamp(form,df):
     samp = df.iloc[2][1:]

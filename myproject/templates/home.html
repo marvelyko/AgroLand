@@ -21,7 +21,7 @@
 
 
           <div>
-                    {{ form.Medium.label() }}
+                    {{ form.Medium.label }}
                     {{ form.Medium(class="browser-default custom-select") }}
           </div>
           <div>
@@ -29,7 +29,7 @@
                     {{ form.Fine(class="browser-default custom-select") }}
           </div>
           <div>
-                    {{ form.CaCO.label() }}
+                    {{ form.CaCO.label|safe }}
                     {{ form.CaCO(class="browser-default custom-select") }}
           </div>
           <div>

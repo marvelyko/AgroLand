@@ -141,6 +141,8 @@ def index():
 
             return dict(Counter(result).most_common(10))
 
+        
+
         result = calculate(df, samp)
         names = list(result.keys())
         scores = list(result.values())

@@ -15,7 +15,7 @@ class PlantsForms(FlaskForm):
     #Anaerobic = SelectField('Anaerobic Tolerance:',
                         # choices=[('Any', 'Any'), ('None', 'None'), ('Low', 'Low'),
                         #           ('Medium', 'Medium'), ('High', 'High')])
-    CaCO = SelectField('CaCO<SUB>3</SUB> Tolerance:',
+    CaCO = SelectField('CaCO <sub>3</sub> Tolerance:',
                       choices=[('Any', 'Any'), ('None', 'None'), ('Low', 'Low'),
                                ('Medium', 'Medium'), ('High', 'High')])
     Cold = SelectField('Cold Stratification Required:',
