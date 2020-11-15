@@ -220,139 +220,106 @@
 
     </section>
     <div class="calculator-demo">
-    <div class="calc-column">
-      <h2>Select Plant</h2>
+		<div class="calc-column">
+			<h2>Select Plant</h2>
 
-      <form action="/action_page.php">
-        <label for="plants">Choose a plant:</label>
-        <select id="plants" name="plants">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
-        <input type="submit">
-      </form>
-    </div>
-    <div class="calc-column">
-      <h2>Recommended Requirements</h2>
-      <p class="reqrmnt">Adapted to Coarse Textured Soils:</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Adapted to Medium Textured Soils:</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Adapted to Fine Textured Soils:</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">CaCO<SUB>3</SUB> Tolerance:</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Cold Stratification Required:</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Moisture Use:</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Precipitation (Minimum):</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Precipitation (Maximum):</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Temperature, Minimum (°F):</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Frost Free Days, Minimum:</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">pH (Minimum):</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">pH (Maximum):</p>
-      <p class="result-calc">21</p>
-    </div>
-    <div class="calc-column">
-      <h2>Requirements</h2>
-            <div >
-
-                     {{ form.Coarse.label() }}
-                  {{ form.Coarse(class="browser-default custom-select") }}
-
-
-
-            </div>
-            <div>
-                      {{ form.Medium.label() }}
-                      {{ form.Medium(class="browser-default custom-select") }}
-            </div>
-            <div>
-                      {{ form.Fine.label() }}
-                      {{ form.Fine(class="browser-default custom-select") }}
-            </div>
-            <div>
-                      {{ form.CaCO.label() }}
-                      {{ form.CaCO(class="browser-default custom-select") }}
-            </div>
-            <div>
-                      {{ form.Cold.label() }}
-                      {{ form.Cold(class="browser-default custom-select") }}
-            </div>
-              <div>
-                      {{ form.Moisture.label() }}
-                      {{ form.Moisture(class="browser-default custom-select") }}
-            </div>
-            <div>
-                      {{ form.Precipitation_min.label() }}
-                      {{ form.Precipitation_min() }}
-            </div>
-            <div>
-                      {{ form.Precipitation_max.label() }}
-                      {{ form.Precipitation_max() }}
-            </div>
-            <div>
-                      {{ form.temperature_min.label() }}
-                      {{ form.temperature_min() }}
-            </div>
-            <div>
-                      {{ form.Frost_free.label() }}
-                      {{ form.Frost_free() }}
-            </div>
-
-            <div>
-                      {{ form.pH_Min.label() }}
-                      {{ form.pH_Min() }}
-            </div>
-            <div>
-                      {{ form.pH_Max.label() }}
-                      {{ form.pH_Max() }}
-            </div>
-
-            <div>
-                {{ form.submit(id="Calculate") }}
-            </div>
-    </div>
-    <div class="calc-column">
-      <h2>Needed Requirements</h2>
-      <p class="reqrmnt">Adapted to Coarse Textured Soils:</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Adapted to Medium Textured Soils:</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Adapted to Fine Textured Soils:</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">CaCO<SUB>3</SUB> Tolerance:</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Cold Stratification Required:</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Moisture Use:</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Precipitation (Minimum):</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Precipitation (Maximum):</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Temperature, Minimum (°F):</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">Frost Free Days, Minimum:</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">pH (Minimum):</p>
-      <p class="result-calc">21</p>
-      <p class="reqrmnt">pH (Maximum):</p>
-      <p class="result-calc">21</p>
-    </div>
-</div>
+			<form action="/action_page.php">
+			  <label for="plants">Choose a plant:</label>
+			  <select id="plants" name="plants">
+			    <option value="1">1</option>
+			    <option value="2">2</option>
+			    <option value="3">3</option>
+			    <option value="4">4</option>
+			  </select>
+			  <input type="submit">
+			</form>
+		</div>
+		<div class="calc-column2">
+			<table>
+			  <tr>
+			    <th>Requirements</th>
+			    <th>Recommended</th>
+			    <th>Condition</th>
+			    <th>Solution</th>
+			  </tr>
+			  <tr>
+			    <td>Adapted to Coarse Textured Soils:</td>
+			    <td>Yes</td>
+			    <td>No</td>
+			    <td class="red-light">Yes</td>
+			  </tr>
+			  <tr>
+			    <td>Adapted to Medium Textured Soils:</td>
+			    <td>Yes</td>
+			    <td>Yes</td>
+			    <td class="green-light">True</td>
+			  </tr>
+			  <tr>
+			    <td>Adapted to Fine Textured Soils:</td>
+			    <td>Yes</td>
+			    <td>No</td>
+			    <td class="red-light">Yes</td>
+			  </tr>
+			  <tr>
+			    <td>CaCO3 Tolerance:</td>
+			    <td>Medium</td>
+			    <td>Low</td>
+			    <td class="red-light">Medium</td>
+			  </tr>
+			  <tr>
+			    <td>Cold Stratification Required:</td>
+			    <td>No</td>
+			    <td>No</td>
+			    <td class="green-light">True</td>
+			  </tr>
+			  <tr>
+			    <td>Moisture Use:</td>
+			    <td>High</td>
+			    <td>Low</td>
+			    <td class="red-light">High</td>
+			  </tr>
+			  <tr>
+			    <td>Precipitation (Minimum):</td>
+			    <td>21</td>
+			    <td>10</td>
+			    <td class="green-light">+11</td>
+			  </tr>
+			  <tr>
+			    <td>Precipitation (Maximum):</td>
+			    <td>43</td>
+			    <td>10</td>
+			    <td class="green-light">+33</td>
+			  </tr>
+			  <tr>
+			    <td>Temperature, Minimum (°F):</td>
+			    <td>21</td>
+			    <td>33</td>
+			    <td class="red-light">-12</td>
+			  </tr>
+			  <tr>
+			    <td>Frost Free Days, Minimum:</td>
+			    <td>21</td>
+			    <td>21</td>
+			    <td class="green-light">True</td>
+			  </tr>
+			  <tr>
+			    <td>pH (Minimum):</td>
+			    <td>21</td>
+			    <td>41</td>
+			    <td class="red-light">-20</td>
+			  </tr>
+			  <tr>
+			    <td>pH (Maximum):</td>
+			    <td>61</td>
+			    <td>41</td>
+			    <td class="green-light">+20</td>
+			  </tr>
+			</table>
+		</div>
 
 
 
-
+	</div>
 </form>
 
 
